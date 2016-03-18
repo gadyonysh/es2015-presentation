@@ -20,7 +20,7 @@ var ph = phantom.create(), dataUri;
 try {
   ph.createPage(function(page) {
     page.open('http://www.google.com', function() {
-      page.evalute(function() {
+      page.evalute(/* Browser context */function() {
         $('input[name="btnI"]').click()
       }, function() {
         ph.renderBase64('PNG', function(data) {
@@ -39,18 +39,15 @@ try {
 
 // After Promisable "Chaining"
 
-phantom.create()
+return phantom.create()
   .then((ph) => {
     this.phantom = ph;
-  })
-  .then(() => {
     return this.phantom.createPage();
-  })
-  .then(page => this.poge = page)
-  .then(() => {
-    return page.open('http://www.google.com')
+  }).then((page) => {
+    this.page = page;
+    return this.page.open('http://www.google.com')
   }).then(() => {
-    return this.page.evalute(function() {
+    return this.page.evalute(/* Browser context */function() {
       $('input[name="btnI"]').click()
     });
   }).then(() => {
