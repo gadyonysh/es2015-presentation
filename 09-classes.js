@@ -66,3 +66,18 @@ class Smth {
     }
   }
 }
+
+// it's possible to extend built-in objects (HtmlElement, Array, Date etc)
+// but it's only partially supported by transpilers (eg Babel can't extend Array, Date etc but it's ok for HtmlElement)
+class WaArray extends Array
+{
+  constructor(...args)
+  {
+    super(...args);
+  }
+  
+  size()
+  {
+    return this.length;
+  }
+}

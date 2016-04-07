@@ -43,7 +43,7 @@ console.log(baz in window); // false
       constructor() {}
     }
 
-    const Foo = new Foo();
+    const fooInstance = new Foo();
   }
   else
   {

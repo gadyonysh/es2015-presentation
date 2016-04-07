@@ -1,3 +1,5 @@
+// Limited support in transpilers
+
 // new primitive type
 let symbol = Symbol();
 typeof symbol === 'symbol'; // true
