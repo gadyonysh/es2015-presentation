@@ -63,3 +63,23 @@ return phantom.create()
     ph.close();
     throw err;
   });
+
+/// Static methods
+
+// Load all images
+Promise.all([img1.ready(), img2.ready()]).then(function() {
+  // all loaded
+}, function() {
+  // one or more failed
+});
+
+// Race timeout
+Promise.race([
+    httpGet('http://example.com/file.txt'),
+    delay(5000).then(function () {
+        throw new Error('Timed out')
+    });
+])
+.then(function (text) { ... })
+.catch(function (reason) { ... });
+
