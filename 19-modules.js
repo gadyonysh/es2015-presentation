@@ -68,3 +68,6 @@ import * as everything from 'myModule';
 
 console.log(Object.keys(everything)); // ['one', 'default']
 
+// Reexport:
+export {cloneDeep as clone} from 'lodash';
+export * from 'lodash';
