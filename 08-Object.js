@@ -25,7 +25,7 @@ const obj = {
 };
 Object.getOwnPropertySymbols(obj); // [Symbol(b), Symbol(d)]
 
-// new method: setPrototypeOf (changin proto is very slow)
+// new method: setPrototypeOf (changing proto is very slow)
 // equal to obj.__proto__ = proto;
 const proto = { protoProp: 'proto prop' };
 const obj = Object.setPrototypeOf({}, proto);
