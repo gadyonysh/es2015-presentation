@@ -29,7 +29,6 @@ Symbol.iterator === iframe.contentWindow.Symbol.iterator // true
 
 class SomeCollection
 {
-
   get [Symbol.toStringTag]()
   {
     return 'SomeCollection';
