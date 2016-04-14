@@ -1,6 +1,6 @@
 # ECMAScript now and in the future
 
-```javascript
+```js
 function gotcha()
 {
   // comment
