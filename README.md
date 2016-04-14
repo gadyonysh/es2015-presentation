@@ -1,1 +1,9 @@
-# es2015-presentation
+# ECMAScript now and in the future
+
+```javascript
+function gotcha()
+{
+  // comment
+  console.log('gotcha!');
+}
+```
