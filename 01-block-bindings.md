@@ -1,15 +1,4 @@
-console.log(foo); // undefined
-console.log(bar); // reference error
-console.log(baz); // reference error
-
-var foo = 1;
-let bar = 2;
-const baz = 3;
-
-console.log(foo in window); // true
-console.log(bar in window); // false
-console.log(baz in window); // false
-
+```js
 // {} is a block: {{{let foo = 'foo';}}}
 
 (function() {
@@ -56,3 +45,18 @@ console.log(baz in window); // false
   console.log(two); // reference error
   console.log(three); // reference error
 })();
+```
+
+```js
+console.log(foo); // undefined
+console.log(bar); // reference error
+console.log(baz); // reference error
+
+var foo = 1;
+let bar = 2;
+const baz = 3;
+
+console.log(foo in window); // true
+console.log(bar in window); // false
+console.log(baz in window); // false
+```
