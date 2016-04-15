@@ -95,4 +95,57 @@ const concurrent = async () => {
 const racing = async () => await Promise.race([asyncFn1, asyncFn2, asyncFn3]);;
 ```
 
+
+Lets try to rewrite promises example:
+
+1. before:
+```js
+return phantom.create()
+  .then((ph) => {
+    this.phantom = ph;
+    return this.phantom.createPage();
+  }).then((page) => {
+    this.page = page;
+    return this.page.open('http://www.google.com')
+  }).then(() => {
+    return this.page.evalute(/* Browser context */function() {
+      $('input[name="btnI"]').click()
+    });
+  }).then(() => {
+    return this.page.renderBase64('PNG');
+  }).then((dataUri) => {
+    return new Promise((done) => { 
+      fs.writeFile('screenshot.dataUri', dataUri, done.bind(null, dataUri))
+    });
+  }).then((dataUri) => {
+    ph.close();
+    return dataUri;
+  }).catch((err) => {
+    ph.close();
+    throw err;
+  });
+```
+
+2. after:
+```js
+try
+{
+  this.phantom = await phantom.create();
+  this.page = await this.phantom.createPage();
+  const response = await this.page.open('http://www.google.com');
+  await this.page.evalute(/* Browser context */() => $('input[name="btnI"]').click());
+  const dataUri = await this.page.renderBase64('PNG');
+  const done = await fs.writeFile('screenshot.dataUri', dataUri, done.bind(null, dataUri));
+  this.phantom.close();
+
+  return dataUri;
+}
+catch(err)
+{
+  if (this.phantom) { this.phantom.close(); }
+  
+  throw err;
+}
+```
+
 [Prev](23-String.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015)
