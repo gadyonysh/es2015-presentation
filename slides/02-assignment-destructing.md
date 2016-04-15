@@ -22,8 +22,7 @@ const {bar: baz = 'default'};
 we can use nested destructing:
 ```js
 const obj = { foo: { bar: 'baz' } };
-const {foo: {bar}} = obj;
-// equal to: const foo = { bar: obj.foo.bar };
+const {foo: {bar}} = obj; // equal to: const foo = { bar: obj.foo.bar };
 ```
 
 array, equal to: const a = 1, b = 2;
@@ -31,8 +30,8 @@ array, equal to: const a = 1, b = 2;
 const [a, b] = [1, 2];
 ```
 
-```js
 use coma, to skip array item:
+```js
 const [a, , b = 3] = [1, 2]; // const a = 1, b = 3;
 ```
 
@@ -54,7 +53,16 @@ function displayAge({name, age}) {
 }
 ```
 ```js
-function setCookie(name, value, {secure = false, path = '/', domain = 'wa.local', expires = new Date(Date.now() + 3600000)}) {/* code */}
+function setCookie(
+  name,
+  value,
+  {
+    secure = false,
+    path = '/',
+    domain = 'wa.local',
+    expires = new Date(Date.now() + 3600000)
+  }
+) {/* code */}
 ```
 
 or in import statement (with some restrictions):
