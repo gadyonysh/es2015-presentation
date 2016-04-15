@@ -6,7 +6,7 @@
 * [Assignment destructing](./slides/02-assignment-destructing.md)
 * [Spread operator](./slides/03-spread-operator.md)
 * [Default function params](./slides/04-default-function-params.md)
-* [Arrow functions](./slides/05-assignment-destructing.md)
+* [Arrow functions](./slides/05-arrow-functions.md)
 * [Template literals](./slides/06-template-literals.md)
 * [Object literals](./slides/07-object-literals.md)
 * [Classes](./slides/09-classes.md)
