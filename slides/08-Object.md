@@ -1,4 +1,9 @@
-// new method: shallow overwrite properties (only enumerable props will be copied - Object.keys)
+[Prev](19-modules.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](20-Number.md)
+
+### Object
+
+New method: shallow overwrite properties (only enumerable props will be copied - Object.keys)
+```js
 Object.assign(target, ...sources);
 
 const target = { one: 0, two: 1 };
@@ -7,16 +12,20 @@ Object.assign(target, { one: 1 }, { two: 2 }, { three: 3 });
 
 Object.assign([1, 2, 3], [4, 5]);
 // now target is [4, 5, 3]
+```
 
-// new method: behave like "===" with some differences (eg used in maps & sets):
+New method: behave like "===" with some differences (eg used with maps & sets):
+```js
 Object.is('1', '1'); // true
 Object.is({}, {}); // false
 
 // differences:
 Object.is(-0, +0); // false
 Object.is(NaN, NaN); // true
+```
 
-// new method: getOwnPropertySymbols
+New method: getOwnPropertySymbols
+```js
 const obj = {
   [Symbol('a')]: 'a',
   [Symbol('b')]: 'b',
@@ -24,9 +33,10 @@ const obj = {
   d: 'd'
 };
 Object.getOwnPropertySymbols(obj); // [Symbol(b), Symbol(d)]
+```
 
-// new method: setPrototypeOf (changing proto is very slow)
-// equal to obj.__proto__ = proto;
+New method: setPrototypeOf (changing proto is very slow) - equal to obj.\_\_proto__ = proto;
+```js
 const proto = { protoProp: 'proto prop' };
 const obj = Object.setPrototypeOf({}, proto);
 
@@ -39,3 +49,6 @@ const me = {
   }
 };
 console.log(me.getGreeting()); // Hello, Vladimir
+```
+
+[Prev](19-modules.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](20-Number.md)
