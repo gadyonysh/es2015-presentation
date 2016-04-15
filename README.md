@@ -28,12 +28,21 @@
 
 
 ## ECMAScript 2016
-* Array.prototype.includes(needle, startIndex = 0)
-* Exponentiation operator: num1 ** num2 == Math.pow(num1, num2)
+* _Array.prototype.includes(needle, startIndex = 0)_
+* Exponentiation operator: _num1 ** num2 == Math.pow(num1, num2)_
 
 
 ## ECMAScript future proposals
-* ES2017: Object.values()/Object.entries()
+* ES2017: _Object.values()_/_Object.entries()_
 * [Asynchronous functions](./slides/24-Async-functions.md)
-* String.prototype.padStart()/padEnd()
-* Trailing commas in function params and calls: function (a, b,) {}
+* _String.prototype.padStart()_/_String.prototype.padEnd()_
+* Trailing commas in function params and calls: _function (a, b,) {}_
+
+## Links
+* [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) (online book by N. C. Zakas)
+* [ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
+* [ES2015 compatibility table](http://kangax.github.io/compat-table/es6/)
+* [ECMAScript current proposals](https://github.com/tc39/ecma262)
+* [ES2016 compatibility table](http://kangax.github.io/compat-table/es7/)
+* [ES2015 performance comparison](https://kpdecker.github.io/six-speed/)
+* [Babel](https://babeljs.io/) (transpiler)
