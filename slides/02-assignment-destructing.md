@@ -65,11 +65,6 @@ function setCookie(
 ) {/* code */}
 ```
 
-or in import statement (with some restrictions):
-```js
-import React, { Component, PropTypes } from 'react';
-```
-
 complex example:
 ```js
 const node = {
