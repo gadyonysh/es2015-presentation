@@ -1,25 +1,33 @@
-// Unsupported in transpilers
+### Sets
 
-// Proxy modifies default object behavior with traps:
-// get – traps proxy.prop and proxy['prop']
-// set – traps proxy.prop = value and proxy['prop'] = value
-// has – traps in operator
-// deleteProperty – traps delete operator
-// defineProperty – traps Object.defineProperty and declarative alternatives
-// enumerate – traps for..in loops
-// ownKeys – traps Object.keys and related methods
-// apply – traps function calls
-// construct – traps usage of the new operator
-// getPrototypeOf – traps internal calls to [[GetPrototypeOf]]
-// setPrototypeOf – traps calls to Object.setPrototypeOf
-// isExtensible – traps calls to Object.isExtensible
-// preventExtensions – traps calls to Object.preventExtensions
-// getOwnPropertyDescriptor – traps calls to Object.getOwnPropertyDescriptor
+[Prev](17-WeakSet.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](19-modules.md)
 
-// to create proxy:
+_Unsupported in transpilers_
+
+Proxy modifies default object behavior with traps:
+
+* _get_ – traps _proxy.prop_ and _proxy\['prop']_
+* _set_ – traps _proxy.prop = value_ and _proxy\['prop'] = value_
+* _has_ – traps _in_ operator
+* _deleteProperty_ – traps _delete_ operator
+* _defineProperty_ – traps _Object.defineProperty_ and declarative alternatives
+* _enumerate_ – traps _for..in_ loops
+* _ownKeys_ – traps _Object.keys_ and related methods
+* _apply_ – traps function calls
+* _construct_ – traps usage of the _new_ operator
+* _getPrototypeOf_ – traps internal calls to \[\[GetPrototypeOf]]
+* _setPrototypeOf_ – traps calls to _Object.setPrototypeOf_
+* _isExtensible_ – traps calls to _Object.isExtensible_
+* _preventExtensions_ – traps calls to _Object.preventExtensions_
+* _getOwnPropertyDescriptor_ – traps calls to _Object.getOwnPropertyDescriptor_
+
+To create proxy:
+```js
 const foo = new Proxy(target, handler);
+```
 
-// Usage example - to hide private members:
+Usage example - to hide private members:
+```js
 const createSecured = obj => {
   const hidePrivate = key => { if (key[0] === '_') { throw new Error('Unable to access private member.'); } };
 
@@ -50,8 +58,10 @@ const createSecured = obj => {
 const secured = createSecured({ _privateFoo: 'foo', publicBar: 'bar' });
 secured._privateFoo = 'baz'; // throws Error
 secured.publicBar = 'baz'; // it's ok
+```
 
-// Usage example - validation:
+Usage example - validation:
+```js
 const validator = {
   set(target, key, value)
   {
@@ -81,8 +91,10 @@ catch (e)
 {
   alert(e.message);
 }
+```
 
-// Revocable proxies:
+Revocable proxies:
+```js
 const target = {};
 const handler = {};
 const {proxy, revoke} = Proxy.revocable(target, handler);
@@ -92,3 +104,6 @@ console.log(proxy.foo); // "bar"
 
 revoke();
 console.log(proxy.foo); // throws Error
+```
+
+[Prev](17-WeakSet.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](19-modules.md)

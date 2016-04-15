@@ -1,4 +1,4 @@
-### WeakMap
+### WeakSets
 
 [Prev](16-Set.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](18-Proxy.md)
 
