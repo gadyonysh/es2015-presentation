@@ -1,3 +1,8 @@
+### Promises
+
+[Prev](11-Iterators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](13-Generators.md)
+
+```js
 new Promise((resolve, reject) => {
   // code
   if (success) {
@@ -10,12 +15,12 @@ new Promise((resolve, reject) => {
 }).catch((err) => {
   // throw err or log
 });
+```
 
+**PhantomJS example**
 
-/// PhantomJS example
-
-// Before Promisable "Callback Hell"
-
+Before Promisable "Callback Hell"
+```js
 var ph = phantom.create(), dataUri;
 try {
   ph.createPage(function(page) {
@@ -36,9 +41,10 @@ try {
   ph.close();
   throw err;
 }
+```
 
-// After Promisable "Chaining"
-
+After Promisable "Chaining"
+```js
 return phantom.create()
   .then((ph) => {
     this.phantom = ph;
@@ -63,17 +69,21 @@ return phantom.create()
     ph.close();
     throw err;
   });
+```
 
-/// Static methods
+**Static methods**
 
-// Load all images
+Load all images
+```js
 Promise.all([img1.ready(), img2.ready()]).then(function() {
   // all loaded
 }, function() {
   // one or more failed
 });
+```
 
-// Race timeout
+Race timeout
+```js
 Promise.race([
     httpGet('http://example.com/file.txt'),
     delay(5000).then(function () {
@@ -82,4 +92,6 @@ Promise.race([
 ])
 .then(function (text) { ... })
 .catch(function (reason) { ... });
+```
 
+[Prev](11-Iterators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](13-Generators.md)
