@@ -1,5 +1,10 @@
-// Array.from - creates Array instances from array-like objects (arguments, iterables etc)
+[Prev](21-Math.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](23-String.md)
 
+### Array
+
+_Array.from_ - creates Array instances from array-like objects (arguments, iterables etc)
+
+```js
 // earlier we could use something like this:
 function castToArrayShort() { return [].slice.call(arguments); }
 
@@ -22,9 +27,10 @@ function typesOf()
 }
 // can be done with rest params
 const typesOf = (...args) => args.map(value => typeof value);
+```
 
-
-// Array.of – similar to new Array(...items), but without special cases - behaves like castToArrayShort:
+_Array.of_ – similar to new Array(...items), but without special cases - behaves like castToArrayShort:
+```js
 new Array(); // []
 Array.of(); // []
 
@@ -39,8 +45,10 @@ Array.of(1, 2, 3); // [1, 2, 3]
 
 new Array(-1); // RangeError: Invalid array length
 Array.of(-1); // [-1]
+```
 
-// Array.prototype.copyWithin – copies a sequence of array elements into somewhere else in the array, signature:
+_Array.prototype.copyWithin_ – copies a sequence of array elements into somewhere else in the array, signature:
+```js
 Array.prototype.copyWithin(target, start = 0, end = this.length);
 
 const items = [1, 2, 3, 4, 5, 6, 7];
@@ -50,15 +58,18 @@ const copyWithin = (items, target, start = 0, end = items.length) => {
   items.splice(target, end - start, ...items.slice(start, end));
   return items;
 };
+```
 
-// Array.prototype.fill – fills all elements of an existing array with the provided value
+_Array.prototype.fill_ – fills all elements of an existing array with the provided value
+```js
 new Array(3).fill(2); // [2, 2, 2]
 [1, 2, 3].fill(1); // [1, 1, 1]
 // no mapping function :(
 [1, 2, 3].fill(function foo(){}); // [function foo(){}, function foo(){}, function foo(){}]
+```
 
-
-// Array.prototype.find – returns the first item to satisfy a callback
+Array.prototype.find – returns the first item to satisfy a callback
+```js
 // similar to Array.prototype.some, but returns matching element or undefined instead of true or false
 Array.prototype.find(
   (item, i, array) => item/* check something here */
@@ -66,14 +77,17 @@ Array.prototype.find(
 
 [1, 2, 3].find(item => item > 1); // 2
 [1, 2, 3].find(item => item === 5); // undefinded
+```
 
-
-// Array.prototype.findIndex – returns the index of the first item to satisfy a callback
+Array.prototype.findIndex – returns the index of the first item to satisfy a callback
+```js
 // similar to Array.prototype.find and Array.prototype.some, but returns first index position or -1
 [1, 2, 3].find(item => item > 1); // 1
 [1, 2, 3].find(item => item === 5); // -1
+```
 
-// Array.prototype.keys – returns an iterator that yields a sequence holding the keys for the array
+Array.prototype.keys – returns an iterator that yields a sequence holding the keys for the array
+```js
 const items = [1, 2, 3];
 
 items.keys(); // ArrayIterator {}
@@ -86,9 +100,10 @@ for (let key of items.keys())
 // 2
 
 [...items.keys()] // [0, 1, 2]
+```
 
-
-// Array.prototype.values – returns an iterator that yields a sequence holding the values for the array
+Array.prototype.values – returns an iterator that yields a sequence holding the values for the array
+```js
 const newItems = [1, 2, 3];
 newItems.values(); // ArrayIterator {}
 [...newItems.values()]; // [1, 2, 3]
@@ -96,9 +111,10 @@ for (let value of newItems.values())
 {
   console.log(value);
 }
+```
 
-
-// Array.prototype.entries – returns an iterator that yields a sequence holding key value pairs for the array
+Array.prototype.entries – returns an iterator that yields a sequence holding key value pairs for the array
+```js
 const chars = ['a', 'b', 'c'];
 chars.entries(); // ArrayIterator {}
 [...chars.entries()]; // [[0, 'a'], [1, 'b'], [2, 'c']]
@@ -106,7 +122,11 @@ for (let entry of chars.entries())
 {
   console.log(entry);
 }
+```
 
-
-// Array.prototype[Symbol.iterator] – exactly the same as the Array.prototype.values method
+Array.prototype[Symbol.iterator] – exactly the same as the Array.prototype.values method
+```js
 [...['a', 'b', 'c'][Symbol.iterator]()]; // ['a', 'b', 'c']
+```
+
+[Prev](21-Math.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](23-String.md)
