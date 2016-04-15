@@ -1,6 +1,6 @@
-### Sets
-
 [Prev](17-WeakSet.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](19-modules.md)
+
+### Proxies
 
 _Unsupported in transpilers_
 
