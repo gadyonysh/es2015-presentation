@@ -1,8 +1,14 @@
-// Maps is an improved alternative to object-based hash-maps. Advantages:
-// 1. No security issues for user-provided keys (__proto__, toString etc)
-// 2. Iterable protocol is already implemented - no magic required for iterating (like Object.keys) - for...of loop
-// 3. Keys can be any object, not only strings/numbers/symbols (eg even DOM-nodes as keys and it's API as values)
+### Maps
 
+[Prev](13-Generators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](15-WeakMaps.md)
+
+**Maps is an improved alternative to object-based hash-maps.**
+Advantages:
+1. No security issues for user-provided keys (__proto__, toString etc)
+2. Iterable protocol is already implemented - no magic required for iterating (like Object.keys) - for...of loop
+3. Keys can be any object, not only strings/numbers/symbols (eg even DOM-nodes as keys and it's API as values)
+
+```js
 const map = new Map();
 
 map.set('key 1', 'value 1');
@@ -13,8 +19,10 @@ const newMap = new Map([
   ['key 1', 'value1 '],
   ['key 2', 'value 2']
 ]);
+```
 
-// iterating with loop using destructing (always iterated in insertion order):
+Iterating with loop using destructing (always iterated in insertion order):
+```js
 for (let [key, value] of newMap)
 {
   console.log(`${key}: ${value}`);
@@ -22,16 +30,20 @@ for (let [key, value] of newMap)
 
 // or:
 newMap.forEach((value, key) => console.log(`${key}: ${value}`));
+```
 
-// we can retrieve entries (because it's "iterable")
+we can retrieve entries (because it's "iterable")
+```js
 console.log(map[Symbol.iterator] === map.entries); // true
 console.log([...newMap.entries()]); // [['key 1', 'value1 '], ['key 2', 'value 2']]
 console.log([...newMap]); // [['key 1', 'value1 '], ['key 2', 'value 2']]
 
 console.log([...newMap.keys()]); // ['key 1', 'key 2']
 console.log([...newMap.values()]); // ['value 1', 'value 2']
+```
 
-// Methods:
+Methods:
+```js
 // to set value
 map.set('key 1', 'value 1'); // set value "value 1" for key "key 1"
 
@@ -49,3 +61,6 @@ map.clear(); // console.log([...map]); outputs "[]"
 
 // has read-only property "size"
 console.log(newMap.size); // 2
+```
+
+[Prev](13-Generators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](15-WeakMaps.md)
