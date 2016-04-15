@@ -29,7 +29,7 @@ Usage example:
 function concat(...words) { return words.join(); }
 ```
 
-It's possible to combine "new" and rest params
+It's possible to combine "new" and rest params:
 ```js
 const date = new Date(...dateArr);
 ```
