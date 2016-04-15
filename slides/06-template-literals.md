@@ -45,8 +45,8 @@ Normal behavior:
 const normal = (template, ...expressions) => template.reduce(
     (accumulator, part, i) => accumulator + expressions[i - 1] + part
   );
-// Outputs: 'First name is "Vladimir". Last name is "Tazin".'
 const text = normal`First name is "${firstName}". Last name is "${lastName}".`;
+
 console.log(text);
 // Outputs: 'First name is "Vladimir". Last name is "Tazin".'
 ```
