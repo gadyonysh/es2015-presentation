@@ -98,7 +98,7 @@ const racing = async () => await Promise.race([asyncFn1, asyncFn2, asyncFn3]);;
 
 Lets try to rewrite promises example:
 
-1. before:
+before:
 ```js
 return phantom.create()
   .then((ph) => {
@@ -126,7 +126,7 @@ return phantom.create()
   });
 ```
 
-2. after:
+after:
 ```js
 try
 {
