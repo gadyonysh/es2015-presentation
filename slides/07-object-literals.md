@@ -1,6 +1,6 @@
-### Object literals
-
 [Prev](06-template-literals.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](09-classes.md)
+
+### Object literals
 
 Property value shorthand:
 ```js

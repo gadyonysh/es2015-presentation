@@ -1,6 +1,6 @@
-### Arrow functions
-
 [Prev](04-default-function-params.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](06-template-literals.md)
+
+### Arrow functions
 
 ```js
 const fn = () => value;

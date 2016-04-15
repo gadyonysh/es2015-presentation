@@ -1,6 +1,6 @@
-### Template literals
-
 [Prev](05-arrow-functions.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](07-object-literals.md)
+
+### Template literals
 
 ```js
 console.log(`Multiline

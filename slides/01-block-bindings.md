@@ -1,6 +1,6 @@
-### Block bindings
-
 [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](02-assignment-destructing.md)
+
+### Block bindings
 
 ```js
 // {} is a block: {{{let foo = 'foo';}}}

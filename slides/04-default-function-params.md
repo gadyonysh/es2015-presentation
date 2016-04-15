@@ -1,6 +1,6 @@
-### Default function params
-
 [Prev](03-spread-operator.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](05-arrow-functions.md)
+
+### Default function params
 
 ```js
 function useDefaultArg(arg = 'arg') {}

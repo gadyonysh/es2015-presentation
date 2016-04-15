@@ -1,6 +1,6 @@
-### Symbols
-
 [Prev](09-classes.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](11-Iterators.md)
+
+### Symbols
 
 _(Limited support in transpilers)_
 

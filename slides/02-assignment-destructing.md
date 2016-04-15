@@ -1,6 +1,6 @@
-### Assignment destructing
-
 [Prev](01-block-bindings.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](03-spread-operator.md)
+
+### Assignment destructing
 
 object, equal to: const bar = foo.bar;
 ```js

@@ -1,6 +1,6 @@
-### Spread operator
-
 [Prev](02-assignment-destructing.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](04-default-function-params.md)
+
+### Spread operator
 
 ```js
 ...[arr]

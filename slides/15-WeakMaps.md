@@ -1,6 +1,6 @@
-### WeakMap
-
 [Prev](14-Maps.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](16-Set.md)
+
+### WeakMaps
 
 WeakMap is similar to map but:
 

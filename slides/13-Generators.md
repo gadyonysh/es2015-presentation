@@ -1,6 +1,6 @@
-### Iterators
-
 [Prev](12-Promises.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](14-Maps.md)
+
+### Generators
 
 Base usage:
 ```js

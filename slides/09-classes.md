@@ -1,6 +1,6 @@
-### Classes
-
 [Prev](07-object-literals.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](10-Symbol.md)
+
+### Classes
 
 Classes are just syntactic sugar for prototypal inheritance:
 

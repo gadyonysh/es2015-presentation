@@ -1,6 +1,6 @@
-### Promises
-
 [Prev](11-Iterators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](13-Generators.md)
+
+### Promises
 
 ```js
 new Promise((resolve, reject) => {

@@ -1,6 +1,6 @@
-### Sets
-
 [Prev](15-WeakMaps.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](17-WeakSet.md)
+
+### Sets
 
 Set is similar to Map but doesn't have keys - values only. It is:
 
