@@ -29,7 +29,7 @@ function typesOf()
 const typesOf = (...args) => args.map(value => typeof value);
 ```
 
-_Array.of_ – similar to new Array(...items), but without special cases - behaves like castToArrayShort:
+_Array.of_ – similar to _new Array(...items)_, but without special cases - behaves like _castToArrayShort_:
 ```js
 new Array(); // []
 Array.of(); // []
@@ -68,7 +68,7 @@ new Array(3).fill(2); // [2, 2, 2]
 [1, 2, 3].fill(function foo(){}); // [function foo(){}, function foo(){}, function foo(){}]
 ```
 
-Array.prototype.find – returns the first item to satisfy a callback
+_Array.prototype.find_ – returns the first item to satisfy a callback
 ```js
 // similar to Array.prototype.some, but returns matching element or undefined instead of true or false
 Array.prototype.find(
@@ -79,14 +79,14 @@ Array.prototype.find(
 [1, 2, 3].find(item => item === 5); // undefinded
 ```
 
-Array.prototype.findIndex – returns the index of the first item to satisfy a callback
+_Array.prototype.findIndex_ – returns the index of the first item to satisfy a callback
 ```js
 // similar to Array.prototype.find and Array.prototype.some, but returns first index position or -1
 [1, 2, 3].find(item => item > 1); // 1
 [1, 2, 3].find(item => item === 5); // -1
 ```
 
-Array.prototype.keys – returns an iterator that yields a sequence holding the keys for the array
+_Array.prototype.keys_ – returns an iterator that yields a sequence holding the keys for the array
 ```js
 const items = [1, 2, 3];
 
@@ -102,7 +102,7 @@ for (let key of items.keys())
 [...items.keys()] // [0, 1, 2]
 ```
 
-Array.prototype.values – returns an iterator that yields a sequence holding the values for the array
+_Array.prototype.values_ – returns an iterator that yields a sequence holding the values for the array
 ```js
 const newItems = [1, 2, 3];
 newItems.values(); // ArrayIterator {}
@@ -113,7 +113,7 @@ for (let value of newItems.values())
 }
 ```
 
-Array.prototype.entries – returns an iterator that yields a sequence holding key value pairs for the array
+_Array.prototype.entries_ – returns an iterator that yields a sequence holding key value pairs for the array
 ```js
 const chars = ['a', 'b', 'c'];
 chars.entries(); // ArrayIterator {}
@@ -124,7 +124,7 @@ for (let entry of chars.entries())
 }
 ```
 
-Array.prototype[Symbol.iterator] – exactly the same as the Array.prototype.values method
+_Array.prototype[Symbol.iterator]_ – exactly the same as the _Array.prototype.values_ method
 ```js
 [...['a', 'b', 'c'][Symbol.iterator]()]; // ['a', 'b', 'c']
 ```
