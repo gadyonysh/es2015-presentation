@@ -3,8 +3,10 @@
 [Prev](13-Generators.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](15-WeakMaps.md)
 
 **Maps is an improved alternative to object-based hash-maps.**
+
 Advantages:
-1. No security issues for user-provided keys (__proto__, toString etc)
+
+1. No security issues for user-provided keys (\_\_proto\_\_, toString etc)
 2. Iterable protocol is already implemented - no magic required for iterating (like Object.keys) - for...of loop
 3. Keys can be any object, not only strings/numbers/symbols (eg even DOM-nodes as keys and it's API as values)
 
