@@ -43,6 +43,6 @@
 * [ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
 * [ES2015 compatibility table](http://kangax.github.io/compat-table/es6/)
 * [ECMAScript current proposals](https://github.com/tc39/ecma262)
-* [ES2016 compatibility table](http://kangax.github.io/compat-table/es7/)
+* [ES-next compatibility table](http://kangax.github.io/compat-table/es7/)
 * [ES2015 performance comparison](https://kpdecker.github.io/six-speed/)
 * [Babel](https://babeljs.io/) (transpiler)
