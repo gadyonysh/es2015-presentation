@@ -1,3 +1,7 @@
+### Block bindings
+
+[Table of contents](README.md) | [Next](02-assignment-destructing.md)
+
 ```js
 // {} is a block: {{{let foo = 'foo';}}}
 
@@ -60,3 +64,5 @@ console.log(foo in window); // true
 console.log(bar in window); // false
 console.log(baz in window); // false
 ```
+
+[Table of contents](README.md) | [Next](02-assignment-destructing.md)
