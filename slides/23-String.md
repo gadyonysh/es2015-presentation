@@ -1,26 +1,39 @@
-// new methods:
+[Prev](22-Array.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](24-Async-functions.md)
 
-// String.prototype.startsWith – whether the string starts with value
+### String
+
+**New methods:**
+
+_String.prototype.startsWith_ – whether the string starts with value
+```js
 const str = 'Hello world';
 const hello = 'Hello';
 const world = 'world';
 
 str.startsWith(hello) === (str.indexOf(hello) === 0);
 str.startsWith(world, 6) === (str.splice(6).indexOf(world) === 0);
+```
 
-// String.prototype.endsWith – whether the string ends in value
+_String.prototype.endsWith_ – whether the string ends in value
+```js
 str.endsWith(world) === (str.lastIndexOf(world) === str.length - world.length);
 str.endsWith(hello, 5); // true
+```
 
-// String.prototype.includes – whether the string contains value anywhere
+_String.prototype.includes_ – whether the string contains value anywhere
+```js
 str.includes(hello) === (str.indexOf(hello) !== -1);
 str.includes(hello, 3); // false
+```
 
-// String.prototype.repeat – returns the string repeated amount times
+_String.prototype.repeat_ – returns the string repeated amount times
+```js
 '!'.repeat(3);
 (new Array(3 + 1)).fill('').join('!');
+```
 
-// String.prototype[Symbol.iterator] – lets you iterate over a sequence of unicode code points (not characters)
+_String.prototype[Symbol.iterator]_ – lets you iterate over a sequence of unicode code points (not characters)
+```js
 const text = 'foo';
 for (let i = 0; i < text.length; i++)
 {
@@ -30,12 +43,15 @@ for (let i = 0; i < text.length; i++)
 }
 
 for (let codePoint of text) { console.log(codePoint); }
+```
 
 
-// better unicode (UTF-16) support - "\u{26203}" == "𦈃" vs "\u26203" === "☠3"
+better unicode (UTF-16) support - "\u{26203}" == "𦈃" vs "\u26203" === "☠3"
 
-// String.prototype.codePointAt – base-10 numeric representation of a code point at a given position in string
+_String.prototype.codePointAt_ – base-10 numeric representation of a code point at a given position in string
 
-// String.fromCodePoint – given ...codePoints, returns a string made of their unicode representations
+_String.fromCodePoint_ – given _...codePoints_, returns a string made of their unicode representations
 
-// String.prototype.normalize – returns a normalized version of the string’s unicode representation
+_String.prototype.normalize_ – returns a normalized version of the string’s unicode representation
+
+[Prev](22-Array.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](24-Async-functions.md)
