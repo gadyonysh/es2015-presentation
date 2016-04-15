@@ -1,4 +1,9 @@
-// Base usage:
+### Iterators
+
+[Prev](12-Promises.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](14-Maps.md)
+
+Base usage:
+```js
 function* genFunc() {
     console.log('First');
     yield; // (A)
@@ -11,12 +16,12 @@ genObj.next()
 genObj.next()
 // Output Second
 // Return { value: undefined, done: true }
+```
 
+**Usages**
 
-///// Usages
-
-/// 1. Iterators (data producers)
-
+1. Iterators (data producers)
+```js
 function* objectEntries(obj) {
     let propKeys = Reflect.ownKeys(obj);
 
@@ -32,7 +37,9 @@ for (let [key,value] of objectEntries(jane)) {
 // Output:
 // first: Jane
 // last: Doe
+```
 
+```js
 // BinaryTree
 class BinaryTree {
     constructor(value, left=null, right=null) {
@@ -63,9 +70,10 @@ for (let x of tree) {
 // c
 // d
 // e
+```
 
-/// 2. Observers (data consumers)
-
+2. Observers (data consumers)
+```js
 let fileName = process.argv[2];
 readFile(fileName, chain(splitLines, numberLines, printLines));
 
@@ -82,9 +90,10 @@ function chain(...generatorFuncs) {
     }
     return generatorObject;
 }
+```
 
-/// 3. Coroutines (data producers and consumers)
-
+3. Coroutines (data producers and consumers)
+```js
 function getFile(url) {
     return fetch(url).then(request => request.text());
 }
@@ -102,8 +111,10 @@ function co(genFunc) {
         }
     }
 }
+```
 
-// Bloking async calls with Promise and CO
+4. Bloking async calls with Promise and CO
+```js
 co(function* () {
     try {
         let [croftStr, bondStr] = yield Promise.all([  // (A)
@@ -119,3 +130,6 @@ co(function* () {
         console.log('Failure to read: ' + e);
     }
 });
+```
+
+[Prev](12-Promises.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](14-Maps.md)
