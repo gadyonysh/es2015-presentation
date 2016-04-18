@@ -20,6 +20,10 @@ genObj.next()
 
 **Usages**
 
+genObj.next()
+genObj.return()
+genObj.throw()
+
 1. Iterators (data producers)
 ```js
 function* objectEntries(obj) {
