@@ -138,8 +138,9 @@ try
   await this.page.evalute(/* Browser context */() => $('input[name="btnI"]').click());
   
   const dataUri = await this.page.renderBase64('PNG');
-  const done = await fs.writeFile('screenshot.dataUri', dataUri, done.bind(null, dataUri));
+  const done = await fs.writeFile('screenshot.dataUri', dataUri);
   
+  done.bind(null, dataUri);
   this.phantom.close();
 
   return dataUri;
