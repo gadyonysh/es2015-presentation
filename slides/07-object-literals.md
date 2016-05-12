@@ -41,7 +41,7 @@ const obj = {
 const obj = {
   'prefix_foo': 'bar',
   'prefix_bar': 'baz',
-  'prefix__method': function() {/* ... */}
+  'prefix_method': function() {/* ... */}
 };
 ```
 

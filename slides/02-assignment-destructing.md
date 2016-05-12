@@ -49,7 +49,7 @@ if (a > b)
 eg we can use it in functions (destructed params are required):
 ```js
 function displayAge({name, age}) {
-  console.log(`${name} is ${lastName} years old.`);
+  console.log(`${name} is ${age} years old.`);
 }
 ```
 ```js
