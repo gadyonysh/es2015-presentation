@@ -42,6 +42,7 @@
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) (online book by N. C. Zakas)
 * [ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
 * [ES2015 compatibility table](http://kangax.github.io/compat-table/es6/)
+* [The TC39 Process document](https://tc39.github.io/process-document/)
 * [ECMAScript current proposals](https://github.com/tc39/ecma262)
 * [ES-next compatibility table](http://kangax.github.io/compat-table/es7/)
 * [ES2015 performance comparison](https://kpdecker.github.io/six-speed/)
