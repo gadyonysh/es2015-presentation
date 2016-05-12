@@ -88,10 +88,4 @@ import * as everything from 'myModule';
 console.log(Object.keys(everything)); // ['one', 'default']
 ```
 
-Reexport:
-```js
-export {cloneDeep as clone} from 'lodash';
-export * from 'lodash';
-```
-
 [Prev](18-Proxy.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](08-Object.md)
