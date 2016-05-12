@@ -79,7 +79,7 @@ console.log(Object.getOwnPropertySymbols(foo)); // [Symbol(), Symbol('two'), Sym
 
 **Usage:**
 
-1. To have unique value:
+* To have unique value:
 ```js
 WA.Log.Level = {
   Debug: Symbol('WA.Log.Level.Debug'),
@@ -89,7 +89,7 @@ WA.Log.Level = {
 };
 ```
 
-2. To prevent properties redefining:
+* To prevent properties redefining:
 ```js
 let hash = {
   [Symbol('foo')]: 'bar',
@@ -97,7 +97,7 @@ let hash = {
 };
 ```
 
-3. Pseudo-privacy:
+* Pseudo-privacy:
 ```js
 const size = Symbol('size');
 class CollectionExample
@@ -125,7 +125,7 @@ data.add('foo');
 console.log(CollectionExample.sizeOf(data)); // 1
 ```
 
-4. Defining protocols, e.g. to give developers ability to add hooks to their objects through your API:
+* Defining protocols, e.g. to give developers ability to add hooks to their objects through your API:
 ```js
 const inspect = console.Symbols.INSPECT;
 const foo = {};
