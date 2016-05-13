@@ -6,25 +6,44 @@ Base usage:
 ```js
 function* genFunc() {
     console.log('First');
-    yield; // (A)
-    console.log('Second'); // (B)
+    yield;
+    console.log('Second');
+    yield 1;
+    console.log('Third');
+    let result = yield 2;
+    console.log('Finish');
+    return result + 1;
 }
 let genObj = genFunc();
 genObj.next()
-// Output First
+// Output: First
 // Return { value: undefined, done: false }
 genObj.next()
-// Output Second
-// Return { value: undefined, done: true }
+// Output: Second
+// Return { value: 1, done: false }
+genObj.next()
+// Output: Third
+// Return { value: 2, done: false }
+genObj.next(2)
+// Output: Third
+// Return { value: 3, done: true }
 ```
 
-**Usages**
+#### Two important applications of generators are:
 
-genObj.next()
-genObj.return()
-genObj.throw()
+* Implementing iterables
+* Blocking on asynchronous function calls
 
-1. Iterators (data producers)
+##### Usages
+
+```
+genObj.next(arg)
+genObj.throw(error)
+genObj.return(value)
+```
+
+##### Interables
+
 ```js
 function* objectEntries(obj) {
     let propKeys = Reflect.ownKeys(obj);
@@ -76,64 +95,40 @@ for (let x of tree) {
 // e
 ```
 
-2. Observers (data consumers)
-```js
-let fileName = process.argv[2];
-readFile(fileName, chain(splitLines, numberLines, printLines));
+##### Blocking on asynchronous function calls
 
-function chain(...generatorFuncs) {
-    if (generatorFuncs.length < 1) {
-        throw new Error('Need at least 1 argument');
-    }
-    let generatorObject = generatorFuncs[generatorFuncs.length-1]();
-    generatorObject.next();
-    for (let i=generatorFuncs.length-2; i >= 0; i--) {
-        let generatorFunction = generatorFuncs[i];
-        generatorObject = generatorFunction(generatorObject);
-        generatorObject.next();
-    }
-    return generatorObject;
-}
-```
-
-3. Coroutines (data producers and consumers)
 ```js
-function getFile(url) {
-    return fetch(url).then(request => request.text());
+function* showUserAvatar() {
+
+  let userFetch = yield fetch('/article/generator/user.json');
+  let userInfo = yield userFetch.json();
+
+  let githubFetch = yield fetch(`https://api.github.com/users/${userInfo.name}`);
+  let githubUserInfo = yield githubFetch.json();
+
+  let img = new Image();
+  img.src = githubUserInfo.avatar_url;
+  img.className = "promise-avatar-example";
+  document.body.appendChild(img);
+
+  yield new Promise(resolve => imageObj.addEventListener('load', resolve, false));
+
+  img.remove();
+
+  return img.src;
 }
 
-function co(genFunc) {
-    let genObj = genFunc();
-    run();
-
-    function run(promiseResult = undefined) {
-        let item = genObj.next(promiseResult);
-        if (!item.done) { 
-            item.value.then(result => run(result)).catch(error => {
-                genObj.throw(error);
-            });
-        }
-    }
+function execute(generator, yieldValue) {
+  let next = generator.next(yieldValue);
+  if (!next.done) {
+    next.value.then(
+      result => execute(generator, result),
+      err => generator.throw(err)
+    );
+  } else {
+    alert(next.value);
+  }
 }
+
+execute( showUserAvatar() );
 ```
-
-4. Bloking async calls with Promise and CO
-```js
-co(function* () {
-    try {
-        let [croftStr, bondStr] = yield Promise.all([  // (A)
-            getFile('http://localhost:8000/croft.json'),
-            getFile('http://localhost:8000/bond.json'),
-        ]);
-        let croftJson = JSON.parse(croftStr);
-        let bondJson = JSON.parse(bondStr);
-
-        console.log(croftJson);
-        console.log(bondJson);
-    } catch (e) {
-        console.log('Failure to read: ' + e);
-    }
-});
-```
-
-[Prev](12-Promises.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](14-Maps.md)
