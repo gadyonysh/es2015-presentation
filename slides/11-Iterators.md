@@ -77,8 +77,6 @@ for (let pair of arr.entries()) {
 // [2, 'c']
 ```
 
-```
-
 ```js
 let obj = { a1: 'a', b1: 'b', c1: 'c'];
 for (let [key, value] of obj.entries()) {
