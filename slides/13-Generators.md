@@ -111,7 +111,7 @@ function* showUserAvatar() {
   img.className = "promise-avatar-example";
   document.body.appendChild(img);
 
-  yield new Promise(resolve => imageObj.addEventListener('load', resolve, false));
+  yield new Promise(resolve => imageObj.addEventListener('load', resolve, false) );
 
   img.remove();
 
@@ -132,3 +132,5 @@ function execute(generator, yieldValue) {
 
 execute( showUserAvatar() );
 ```
+
+[Prev](12-Promises.md) | [Table of contents](https://github.com/gadyonysh/es2015-presentation#ecmascript-2015) | [Next](14-Maps.md)
