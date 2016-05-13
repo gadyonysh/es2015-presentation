@@ -75,7 +75,7 @@ return phantom.create()
 
 Load all images
 ```js
-Promise.all([img1.ready(), img2.ready()]).then(function() {
+Promise.all([img1.readyPromise(), img2.readyPromise()]).then(function(results) {
   // all loaded
 }, function() {
   // one or more failed
